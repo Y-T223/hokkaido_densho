@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>伝承遊学館｜美深町 旧厚生小学校に息づく開拓のくらし</title>
+<meta name="description" content="北海道美深町、廃校になった旧厚生小学校を活用した伝承遊学館。開拓時代の農業用具900点や貴重な35mm映写機など、地域の歴史と暮らしを実物で伝えます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --board:#1d2e27;
+  --board-deep:#142019;
+  --brass:#b8964f;
+  --brass-light:#d6bb83;
+  --paper:#ece3cf;
+  --paper-deep:#ddd0b3;
+  --ink:#1c1a16;
+  --ink-soft:#4a443a;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;letter-spacing:.06em}
+
+/* header */
+.nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:20px 32px;color:var(--paper)}
+.nav .logo{font-family:var(--serif);font-size:18px;letter-spacing:.2em}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:14px;letter-spacing:.1em}
+.nav a{text-decoration:none;opacity:.88}
+.nav a:hover{opacity:1;color:var(--brass-light)}
+
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;background:var(--board-deep);color:var(--paper);overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:sepia(.35) contrast(1.02) brightness(.72)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,32,25,.92) 8%,rgba(20,32,25,.25) 60%,rgba(20,32,25,.45))}
+.hero .wrap{position:relative;z-index:2;padding-bottom:88px;width:100%}
+.hero .meta{font-size:14px;letter-spacing:.18em;color:var(--brass-light);margin-bottom:20px}
+.hero h1{font-size:clamp(44px,8vw,92px);letter-spacing:.14em;font-weight:500;margin-bottom:24px}
+.hero .lead{font-family:var(--serif);font-size:clamp(17px,2.2vw,22px);max-width:30em;line-height:2.1}
+.hero .rule{width:72px;height:2px;background:var(--brass);margin:28px 0}
+
+/* sections */
+section{padding:112px 0}
+.sec-title{font-size:clamp(26px,3.6vw,38px);margin-bottom:12px}
+.sec-sub{color:var(--ink-soft);font-size:15px;margin-bottom:56px}
+.brass-line{display:block;width:56px;height:2px;background:var(--brass);margin:0 0 28px}
+
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.about p+p{margin-top:1.3em}
+.frame{position:relative;background:var(--paper-deep);aspect-ratio:4/5;padding:14px;border:1px solid var(--brass);box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--brass-light)}
+.frame img{width:100%;height:100%;object-fit:cover;filter:sepia(.28)}
+.frame figcaption{position:absolute;left:14px;bottom:-34px;font-size:12px;color:var(--ink-soft)}
+
+/* highlight - dark board */
+.board{background:var(--board);color:var(--paper)}
+.board .sec-sub{color:var(--brass-light)}
+.hl{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.hl .frame{aspect-ratio:3/2;background:var(--board-deep);box-shadow:0 0 0 6px var(--board),0 0 0 7px var(--brass)}
+.hl h3{font-size:clamp(22px,3vw,30px);margin-bottom:20px}
+.big{font-family:var(--serif);font-size:clamp(56px,9vw,104px);line-height:1;color:var(--brass-light);letter-spacing:.04em}
+.big small{font-size:.28em;margin-left:8px;letter-spacing:.1em}
+.hl p{color:#d9d2bf}
+.hl-row+.hl-row{margin-top:96px}
+.hl-row.rev .frame{order:2}
+
+/* voices */
+.voices{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.voice{background:#f5eedd;border:1px solid var(--paper-deep);border-top:3px solid var(--brass);padding:36px 32px}
+.stars{color:var(--brass);letter-spacing:.3em;font-size:18px;margin-bottom:16px}
+.voice p{font-family:var(--serif);font-size:16px;line-height:2}
+.voice cite{display:block;margin-top:18px;font-style:normal;font-size:13px;color:var(--ink-soft)}
+
+/* info */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+dl.info{border-top:1px solid var(--brass)}
+dl.info div{display:grid;grid-template-columns:7em 1fr;gap:16px;padding:18px 4px;border-bottom:1px solid var(--paper-deep)}
+dl.info dt{font-family:var(--serif);color:var(--ink-soft)}
+dl.info a{text-underline-offset:4px}
+table.close{width:100%;border-collapse:collapse;font-size:15px;border-top:1px solid var(--brass)}
+table.close th,table.close td{text-align:left;padding:14px 4px;border-bottom:1px solid var(--paper-deep);font-weight:400}
+table.close th{width:4.5em;font-family:var(--serif);color:var(--ink-soft)}
+.note{font-size:13px;color:var(--ink-soft);margin-top:14px}
+
+/* access */
+.access{background:var(--paper-deep)}
+.map{border:1px solid var(--brass);padding:10px;background:var(--paper)}
+.map iframe{display:block;width:100%;height:440px;border:0;filter:sepia(.25)}
+.btn-row{margin-top:24px;text-align:center}
+.btn{display:inline-block;padding:16px 44px;background:var(--board);color:var(--paper);text-decoration:none;font-family:var(--serif);letter-spacing:.14em;border:1px solid var(--brass);transition:background .25s,color .25s}
+.btn:hover{background:var(--brass);color:var(--board-deep)}
+
+footer{background:var(--board-deep);color:var(--paper);padding:56px 0;text-align:center;font-size:13px}
+footer .logo{font-family:var(--serif);font-size:20px;letter-spacing:.24em;margin-bottom:12px}
+footer p{color:#b9b29f}
+
+@media (max-width:820px){
+  .nav ul{display:none}
+  section{padding:80px 0}
+  .about,.hl,.voices,.info-grid{grid-template-columns:1fr;gap:40px}
+  .hl-row.rev .frame{order:0}
+  .frame{aspect-ratio:3/2}
+  .frame figcaption{position:static;margin-top:10px}
+  dl.info div{grid-template-columns:6em 1fr}
+  .map iframe{height:320px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="logo">伝承遊学館</div>
+  <ul>
+    <li><a href="#about">館について</a></li>
+    <li><a href="#exhibit">展示</a></li>
+    <li><a href="#voice">来館者の声</a></li>
+    <li><a href="#info">ご利用案内</a></li>
+    <li><a href="#access">アクセス</a></li>
+  </ul>
+</header>
+
+<main>
+<div class="hero">
+  <img src="images/hero.jpg" alt="秋の光に包まれる、旧厚生小学校の木造校舎を利用した伝承遊学館の外観" onerror="this.style.display='none'">
+  <div class="wrap">
+    <p class="meta">北海道 美深町</p>
+    <h1>伝承遊学館</h1>
+    <div class="rule"></div>
+    <p class="lead">廃校になった小学校の校舎に、<br>開拓の暮らしと、先人の知恵がしずかに息づいています。</p>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2 class="sec-title">学び舎が、郷土の記憶をつなぐ場所に。</h2>
+      <span class="brass-line"></span>
+      <p>平成11年3月31日に廃校となった町立厚生小学校。その校舎を活用し、平成14年（2002年）10月1日に伝承遊学館は開館しました。</p>
+      <p>地域の先人たちの歴史や文化、産業、自然科学に関わる資料を集め、展示し、後の世代へ伝えることが設立の目的です。美深町の歴史や北海道開拓時代の産業道具（特に林業関連）、地域の自然環境、遺跡資料まで、幅広い収蔵品を見学できます。</p>
+      <p>実物の道具や生活用品を目の前にすることで、当時の暮らしを具体的に思い描けるのがこの館の魅力。教育施設としての役割も担っています。</p>
+    </div>
+    <figure class="frame">
+      <img src="images/school.jpg" alt="木の床と窓の光が残る、旧小学校の教室を思わせる展示室" onerror="this.style.display='none'">
+    </figure>
+  </div>
+</section>
+
+<section id="exhibit" class="board">
+  <div class="wrap">
+    <h2 class="sec-title">ここでしか出会えない展示</h2>
+    <p class="sec-sub">実物だからこそ伝わる、開拓の息づかい。</p>
+
+    <div class="hl-row hl">
+      <figure class="frame">
+        <img src="images/tools.jpg" alt="教室に並ぶ、開拓時代に使われた古い農業用具" onerror="this.style.display='none'">
+      </figure>
+      <div>
+        <div class="big">900<small>点</small></div>
+        <h3>先人の開拓精神を伝える農業用具</h3>
+        <p>廃校を利用した博物館分館に、開拓の暮らしを支えた農業用具が900点並びます。ひとつひとつの道具から、土地を拓いた人びとの工夫と粘り強さが伝わります。</p>
+      </div>
+    </div>
+
+    <div class="hl-row hl rev">
+      <figure class="frame">
+        <img src="images/projector.jpg" alt="展示室に置かれた、古い35mm映写機" onerror="this.style.display='none'">
+      </figure>
+      <div>
+        <h3>貴重な35mm映写機</h3>
+        <p>かつて札幌にあった三和精機製作所が製造した35mm映写機を展示。美深東映で使われていたもので、来館者からは「日本ではここでしか見られないのでは」という声も寄せられています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="voice">
+  <div class="wrap">
+    <h2 class="sec-title">来館者の声</h2>
+    <p class="sec-sub">実際に訪れた方のクチコミです。</p>
+    <div class="voices">
+      <article class="voice">
+        <div class="stars" aria-label="5点満点中5点">★★★★★</div>
+        <p>かつて札幌にあった三和精機製作所が製造した35mm映写機が展示されています。美深東映で使われていた映写機。日本ではここでしか見れない映写機だと思います。とても貴重です。</p>
+        <cite>2014年8月訪問</cite>
+      </article>
+      <article class="voice">
+        <div class="stars" aria-label="5点満点中5点">★★★★★</div>
+        <p>お仕事で立ち寄ったのですが、色々なハーブがありましたね。また時間を作ってゆっくりと行こうと思いました。</p>
+        <cite>来館者のクチコミ</cite>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="info" style="background:#f3ecd9">
+  <div class="wrap">
+    <h2 class="sec-title">ご利用案内</h2>
+    <p class="sec-sub">お出かけ前に、休館日をご確認ください。</p>
+    <div class="info-grid">
+      <dl class="info">
+        <div><dt>施設名</dt><dd>伝承遊学館</dd></div>
+        <div><dt>電話番号</dt><dd><a href="tel:01656-2-1744">01656-2-1744</a></dd></div>
+        <div><dt>メール</dt><dd><a href="mailto:s-shogai@town.bifuka.hokkaido.jp">s-shogai@town.bifuka.hokkaido.jp</a></dd></div>
+        <div><dt>公式サイト</dt><dd><a href="http://www.town.bifuka.hokkaido.jp/cms/section/kyouiku/qlmcaj0000005lws.html" target="_blank" rel="noopener">美深町公式ページ</a></dd></div>
+      </dl>
+      <div>
+        <table class="close">
+          <caption style="text-align:left;font-family:var(--serif);padding-bottom:12px;color:var(--ink-soft)">休館日</caption>
+          <tbody>
+            <tr><th>5月</th><td>11日・25日</td></tr>
+            <tr><th>6月</th><td>8日・22日</td></tr>
+            <tr><th>7月</th><td>6日・20日</td></tr>
+            <tr><th>8月</th><td>5日〜11日（連続7日間）</td></tr>
+            <tr><th>9月</th><td>7日・21日</td></tr>
+            <tr><th>10月</th><td>5日</td></tr>
+          </tbody>
+        </table>
+        <p class="note">最新の開館状況は、公式サイトまたはお電話でご確認ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="access" class="access">
+  <div class="wrap">
+    <h2 class="sec-title">アクセス</h2>
+    <p class="sec-sub">北海道 美深町</p>
+    <div class="map">
+      <iframe title="伝承遊学館の地図" src="https://www.google.com/maps?q=%E4%BC%9D%E6%89%BF%E9%81%8A%E5%AD%A6%E9%A4%A8+%E7%BE%8E%E6%B7%B1%E7%94%BA&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+    <div class="btn-row">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BC%9D%E6%89%BF%E9%81%8A%E5%AD%A6%E9%A4%A8+%E7%BE%8E%E6%B7%B1%E7%94%BA" target="_blank" rel="noopener">Googleマップで開く</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="logo">伝承遊学館</div>
+  <p>北海道 美深町｜TEL 01656-2-1744</p>
+</footer>
+
+</body>
+</html>
